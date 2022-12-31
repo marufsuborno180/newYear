@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: blueviolet;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  text-align: center;
+}
+.wrapper .content h1 {
+  font-size: 45px;
+  margin: 20px;
+}
+.wrapper .coundown {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.wrapper .coundown input {
+  width: 100%;
+  max-width: 150px;
+  padding: 0;
+  height: 60px;
+  margin: 10px;
+  text-align: center;
+  font-size: 35px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#091a1a">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="নতুন জীবন নতুন করে সাজায়, নিজে নামাজ পড়ো অন্য কেউ নামাজের দাওয়াত দাও">
+    <meta name="twitter:image" content="assest/img/ytryty.PNG">
+    <meta name="twitter:title" content="আপনার জন্য একটি নতুন বছরের উপহার">
+    <meta name="description" content="Open this URl within 31 Dec 2022 12:00 AM">
+    <meta property="og:image" content="img/gift.jpg">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>  
+    <div class="wrapper">
+        <div class="content">
+            <h1>অপেক্ষা করুন এবং ম্যাজিক দেখুন</h1>
+            <h2>31 Jan 2023 12:00 PM</h2>
+        </div>
+        <div class="coundown">
+            <input type="text" value="0" readonly><input type="text" value="0" readonly><input type="text" value="0" readonly><input type="text" value="0" readonly>
+        </div>
+    </div>
+    <script>
+        const endDate = "01 Jan 2023 12:00 AM"
+        document.querySelector('.content h2').innerHTML = endDate;
+        const input = document.querySelectorAll('input')
+
+        const clock = ()=>{
+            const end = new Date(endDate)
+            const now = new Date()
+            const diff =(end - now) /1000;
+            // Day**** 
+            if (diff < 0) return;
+            const Day = Math.floor(diff / 3600 / 24)
+            const Hour = Math.floor((diff / 3600) % 24)
+            const Min = Math.floor((diff / 60) % 24)
+            const Sec = Math.floor(diff % 60)
+            input[0].value = Day
+            input[1].value = Hour
+            input[2].value = Min
+            input[3].value = Sec
+            if (diff == 0) {
+                document.querySelector('body').style.background = "url(img/2023-GIF.gif)"
+                document.querySelector('body').style.backgroundPosition = 'center'
+                document.querySelector('body').style.backgroundSize = "100%"
+                document.querySelector('.wrapper').style.display = "none" 
+                // alert('ok')
+            }
+            
+
+            setInterval(() => {
+                clock()
+            }, 1000);
+        }
+        clock()
+
+        /**
+         * 1 Day = 24 Hr
+         *  1 hr = 60 min
+         *  60min = 3600s
+         * */ 
+    </script>
+</body>
+</html>
